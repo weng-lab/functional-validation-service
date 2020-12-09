@@ -1,4 +1,4 @@
-CREATE TABLE $ASSEMBLY_vista_enhancers (
+CREATE TABLE IF NOT EXISTS $ASSEMBLY_vista_enhancers (
     ccre TEXT,
     overlap INT,
     chromosome TEXT,
