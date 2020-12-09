@@ -6,9 +6,7 @@ const COORDINATES: GenomicRange = { chromosome: "chr1", start: 3327997, end: 333
 describe("VISTA enhancer queries for hg38", () => {
     
     test("should select two VISTA enhancers for a coordinate range", async () => {
-        console.log("test");
         const results = await selectVistaEnhancers({ assembly: "hg38", coordinates: COORDINATES }, db);
-        console.log(results);
         expect(results.length).toBe(2);
         expect(results).toEqual([{
             accession: "hs2274",
