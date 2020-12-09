@@ -6,7 +6,7 @@ version: '3'
 services:
 
   # database
-  graphqlservice_postgrestest_1:
+  postgrestest:
     image: postgres:latest    
     ports:
       - 5555:5432 # don't conflict with local posgresql
