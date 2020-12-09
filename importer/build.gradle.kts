@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "org.weng-lab.functional-validation-importer"
-version = "0.0.1"
+version = "0.0.3"
 val artifactID = "functional-validation-importer"
 
 repositories {
