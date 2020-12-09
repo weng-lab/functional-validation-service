@@ -21,7 +21,7 @@
         "@apollo/federation": "^0.12.1",
         "dataloader": "^1.4.0",
         "express": "^4.16.4",
-        "pg-promise": "^8.5.0",
+        "pg-promise": "^10.8.1",
         "queryz": "^0.0.3"
     },
     "devDependencies": {
@@ -32,8 +32,8 @@
         "prettier": "^1.15.0",
         "supertest": "^3.4.2",
         "ts-md5": "^1.2.4",
-        "jest": "^23.6.0",
-        "ts-jest": "^23.1.4",
+        "jest": "^26.6.3",
+        "ts-jest": "^26.4.4",
         "ts-node": "^7.0.1",
         "typescript": "^3.1.3"
     },

@@ -1,4 +1,4 @@
-FROM node:10-alpine AS build
+FROM node:14-alpine AS build
 
 # Create app directory
 RUN mkdir -p /app
@@ -14,7 +14,7 @@ COPY . /app/
 RUN yarn build && yarn --production
 
 # Copy build into new smaller docker container
-FROM node:10-alpine
+FROM node:14-alpine
 COPY --from=build /app /app
 WORKDIR /app
 EXPOSE 3000
