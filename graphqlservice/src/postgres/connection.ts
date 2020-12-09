@@ -19,7 +19,7 @@ const initOptions: IOptions<{}> = {
 
 const pgp: IMain = pgPromise(initOptions);
 const user: string = process.env["POSTGRES_USER"] || "postgres";
-const password: string = process.env["POSTGRES_PASS"] || "";
+const password: string = process.env["PGPW"] || "";
 const host: string = process.env["POSTGRES_HOST"] || "localhost";
 const port: string = process.env["POSTGRES_PORT"] || "5432";
 const dbname: string = process.env["POSTGRES_DB"] || "postgres";
