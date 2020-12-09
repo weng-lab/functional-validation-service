@@ -25,7 +25,7 @@ source scripts/lib/${1}.env.sh
 if [[ ! -z "${3}" ]]; then
     TAG=${3}
 else
-    TAGS=( $(gcloud container images list-tags gcr.io/devenv-215523/snps-service --limit=10 --format="get(tags)") )
+    TAGS=( $(gcloud container images list-tags gcr.io/devenv-215523/functional-validation-service --limit=10 --format="get(tags)") )
     echo "Please select a docker image tag to deploy:"
     select TAG in ${TAGS[@]}
     do

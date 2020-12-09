@@ -44,9 +44,9 @@ gcloud --quiet config set compute/zone $COMPUTE_ZONE
 gcloud --quiet container clusters get-credentials $K8S_CLUSTER_NAME
 
 # If this job already exists and is running, do not run.
-if kubectl get job import-snps-job &>/dev/null ; then
-    echo "Existing import-snps-job found. Deleting..."
-    kubectl delete job import-snps-job
+if kubectl get job import-functional-validation-job &>/dev/null ; then
+    echo "Existing import-functional-validation-job found. Deleting..."
+    kubectl delete job import-functional-validation-job
 fi
 
 # Deploy the configured service / Apply any changes to the configuration.
