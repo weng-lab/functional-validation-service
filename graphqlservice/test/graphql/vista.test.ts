@@ -2,6 +2,8 @@ import request, { Response } from "supertest";
 import app from "../../src/app";
 import { GenomicRange } from "../../src/postgres/types";
 
+jest.setTimeout(300000);
+
 const COORDINATES: GenomicRange = { chromosome: "chr1", start: 3327997, end: 3332165 };
 
 const query = `
