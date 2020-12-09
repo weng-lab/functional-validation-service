@@ -25,7 +25,7 @@ spec:
               secretKeyRef:
                 name: genes-db-credentials
                 key: username
-          - name: PGPW
+          - name: POSTGRES_PASS
             valueFrom:
               secretKeyRef:
                 name: genes-db-credentials

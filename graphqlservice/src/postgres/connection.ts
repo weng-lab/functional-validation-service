@@ -19,10 +19,10 @@ const initOptions: IOptions<{}> = {
 
 const pgp: IMain = pgPromise(initOptions);
 const user: string = process.env["POSTGRES_USER"] || "postgres";
-const password: string = process.env["PGPW"] || "";
+const password: string = process.env["POSTGRES_PASS"] || "";
 const host: string = process.env["POSTGRES_HOST"] || "localhost";
 const port: string = process.env["POSTGRES_PORT"] || "5432";
 const dbname: string = process.env["POSTGRES_DB"] || "postgres";
-const cn: string = `postgresql://${user}:${password}@${host}:${port}/${dbname}`; //'postgres://postgres@localhost:5432/postgres';
+const cn: string = process.env["GITHUB_ACTIONS"] ? "postgresql://postgres@localhost:5555/postgres" : `postgresql://${user}:${password}@${host}:${port}/${dbname}`;
 console.log(cn);
 export const db: IDatabase<any> = pgp(cn);
