@@ -24,4 +24,5 @@ const host: string = process.env["POSTGRES_HOST"] || "localhost";
 const port: string = process.env["POSTGRES_PORT"] || "5432";
 const dbname: string = process.env["POSTGRES_DB"] || "postgres";
 const cn: string = `postgresql://${user}:${password}@${host}:${port}/${dbname}`; //'postgres://postgres@localhost:5432/postgres';
+console.log(cn);
 export const db: IDatabase<any> = pgp(cn);

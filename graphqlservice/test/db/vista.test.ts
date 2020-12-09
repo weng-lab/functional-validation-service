@@ -1,8 +1,6 @@
 import { db, selectVistaEnhancers } from "../../src/postgres";
 import { GenomicRange } from "../../src/postgres/types";
 
-jest.setTimeout(300000);
-
 const COORDINATES: GenomicRange = { chromosome: "chr1", start: 3327997, end: 3332165 };
 
 describe("VISTA enhancer queries for hg38", () => {
