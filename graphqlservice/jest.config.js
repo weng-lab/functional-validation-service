@@ -9,5 +9,6 @@ module.exports = {
     },
     "testMatch": ["**/test/**/*.test.(ts|js)"],
     "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"],
-    "testEnvironment": "node"
-}
+    "testEnvironment": "node",
+    "testTimeout": 300000
+};
