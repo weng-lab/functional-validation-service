@@ -23,6 +23,6 @@ const password: string = process.env["POSTGRES_PASS"] || "";
 const host: string = process.env["POSTGRES_HOST"] || "localhost";
 const port: string = process.env["POSTGRES_PORT"] || "5432";
 const dbname: string = process.env["POSTGRES_DB"] || "postgres";
-const cn: string = process.env["GITHUB_ACTIONS"] ? "postgresql://postgres@localhost:5555/postgres" : `postgresql://${user}:${password}@${host}:${port}/${dbname}`;
+const cn: string = process.env["GITHUB_ACTIONS"] ? "postgresql://localhost:5555/postgres" : `postgresql://${user}:${password}@${host}:${port}/${dbname}`;
 console.log(cn);
 export const db: IDatabase<any> = pgp(cn);
