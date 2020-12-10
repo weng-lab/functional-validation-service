@@ -8,7 +8,8 @@ const VISTA_PARAMETERS: ParameterMap<VistaParameters> = new Map([
     [ "accession", fieldMatchesAny("accession") ],
     [ "coordinates", coordinateParameters("startpos", "endpos") ],
     [ "tissues", tableName => `${tableName}.tissues @> \${${tableName}.tissues}` ],
-    [ "minimumOverlap", tableName => `${tableName}.overlap >= \${${tableName}.minimumOverlap}` ]
+    [ "minimumOverlap", tableName => `${tableName}.overlap >= \${${tableName}.minimumOverlap}` ],
+    [ "active", tableName => `${tableName}.activity` ]
 ]);
 
 /**

@@ -53,4 +53,9 @@ describe("VISTA enhancer queries for hg38", () => {
         expect(results.length).toBe(2);
     });
 
+    test("should select three active vista enhancers", async () => {
+        const results = await selectVistaEnhancers({ assembly: "hg38", active: true }, db);
+        expect(results.length).toBe(3);
+    });
+
 });

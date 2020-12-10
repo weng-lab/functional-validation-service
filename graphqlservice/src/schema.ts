@@ -34,6 +34,7 @@ export const typeDefs = gql`
             tissues: [String!]
             minimumOverlap: Int
             coordinates: GenomicRangeInput
+            active: Boolean
         ): [VistaEnhancer!]!
 
     }

@@ -12,6 +12,7 @@ query vista(
   $minimumOverlap: Int
   $tissues: [String!]
   $coordinates: GenomicRangeInput
+  $active: Boolean
 ) {
   vistaQuery(
     assembly: $assembly
@@ -20,6 +21,7 @@ query vista(
     minimumOverlap: $minimumOverlap
     tissues: $tissues
     coordinates: $coordinates
+    active: $active
   ) {
     cCRE
     accession
@@ -119,6 +121,15 @@ describe("VISTA enhancer queries", () => {
 
   test("should return VISTA enhancers for hg38 by cCRE", async () => {
     const variables = { assembly: "hg38", tissues: [ "heart" ] };
+    const response: Response = await request(app)
+        .post("/graphql")
+        .send({ query, variables });
+    expect(response.status).toBe(200);
+    expect(response.body.data.vistaQuery.length).toEqual(3);
+  });
+
+  test("should return active VISTA enhancers for hg38", async () => {
+    const variables = { assembly: "hg38", active: true };
     const response: Response = await request(app)
         .post("/graphql")
         .send({ query, variables });

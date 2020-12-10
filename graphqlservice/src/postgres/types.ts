@@ -28,6 +28,7 @@ export interface Parameters {
  * @member accession select VISTA enhancers with these accessions.
  * @member tissues if set, selects VISTA enhancers active in these tissues.
  * @member minimumOverlap selects VISTA enhancers which overlap a cCRE by at least this many basepairs.
+ * @member active if set, selects only elements which tested positive.
  */
 export interface VistaParameters extends Parameters {
     assembly: string;
@@ -36,6 +37,7 @@ export interface VistaParameters extends Parameters {
     accession?: string[];
     tissues?: string[];
     minimumOverlap?: number;
+    active?: boolean;
 };
 
 export type VistaResult = {
